@@ -114,7 +114,7 @@ Ejecutar versión conda
 6. Ejecutar:
 
    ```{bash}
-   map_of_fle sds.ini 2023_07_17_fsle1.nc "2023-07-17T12:00" --advection_time 10 --resolution=0.08333588 --final_separation 0.2 --x_min -180 --x_max 180 --y_min -60 --y_max 60 --verbose --time_direction forward
+   map_of_fle sds.ini 2023_07_17_fsle1.nc "2023-07-17T12:00" --advection_time 10 --resolution=0.04 --final_separation 0.2 --x_min -180 --x_max 180 --y_min -60 --y_max 60 --verbose --time_direction forward
    ```
 
 Descargar datos
@@ -137,3 +137,12 @@ Otra forma alternativa, desde la web:
 1. Entrar en [https://www.aviso.altimetry.fr/en/home.html](https://www.aviso.altimetry.fr/en/home.html)
 2. Identificarse con usuario (`albertotb@gmail.com`) y contraseña (`2BFeqk`)
 3. Ir a `MY AVISO+ > My products > Lyapunov Exponents and Orientations (grids) > Extraction > DATASET-DUACS-NRT-GLOBAL-ALLSAT-MADT-FSLE`. Seleccionar `Full region` y editar la latitud a (-60, 60). Editar la fecha en el desplegable (importante destacar que la fecha que aparece es la última disponible)
+
+NOTA: Los ficheros descargados de AVISO tienen 9000 longitudes y 3000 latitudes. Para conseguir algo similar con el script, habría que usar `--resolution 0.04`. Sin embargo, no es idéntico.
+Además, los ficheros descargados tienen las siguientes longitudes: 
+
+```
+* lon       (lon) float64 180.0 180.0 180.1 180.1 ... 539.8 539.9 539.9 539.9
+```
+
+Esto no se corresponde con el formato habitual (-180, 180), habría que ver como transformarlo
