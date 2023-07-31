@@ -120,10 +120,20 @@ Ejecutar versión conda
 Descargar datos
 ---------------
 
+1. Instalar motuclient con 
+
+   ```{bash}
+   pip install motuclient
+   ```
+
+2. Ejecutar cambiando la fecha (`-t` y `-T`) y el fichero de salida (`-f`):
+
+   ```{bash}
+   motuclient -u albertotb@gmail.com -p 2BFeqk -m https://motu.aviso.altimetry.fr/motu-web/Motu -s AvisoFSLE -d dataset-duacs-nrt-global-allsat-madt-fsle -x -180 -X 180 -y -60 -Y 60 -t "2022-07-15" -T "2022-07-15" --outputWritten netcdf -v fsle_max -v theta_max -o "." -f "2022_07_15_fsle.nc"
+   ```
+
+Otra forma alternativa, desde la web:
+
 1. Entrar en [https://www.aviso.altimetry.fr/en/home.html](https://www.aviso.altimetry.fr/en/home.html)
 2. Identificarse con usuario (`albertotb@gmail.com`) y contraseña (`2BFeqk`)
-3. Ir a `MY AVISO+ > My products > Lyapunov Exponents and Orientations (grids) > Extraction > DATASET-DUACS-NRT-GLOBAL-ALLSAT-MADT-FSLE`. Seleccionar `Full region` y editar la latitud a (-60, 60). Editar la fecha en el desplegable (importante destacar que la fecha que aparece es la última disponible). También se puede usar el comando (instalar previamente motuclient con `pip install motuclient`):
-
-```{bash}
-motuclient -u albertotb@gmail.com -p 2BFeqk -m https://motu.aviso.altimetry.fr/motu-web/Motu -s AvisoFSLE -d dataset-duacs-nrt-global-allsat-madt-fsle -x -180 -X 180 -y -60 -Y 60 -t "2022-07-15" -T "2022-07-15" --outputWritten netcdf -v fsle_max -v theta_max -o "." -f "2022_07_15_fsle.nc"
-```
+3. Ir a `MY AVISO+ > My products > Lyapunov Exponents and Orientations (grids) > Extraction > DATASET-DUACS-NRT-GLOBAL-ALLSAT-MADT-FSLE`. Seleccionar `Full region` y editar la latitud a (-60, 60). Editar la fecha en el desplegable (importante destacar que la fecha que aparece es la última disponible)
