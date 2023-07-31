@@ -93,7 +93,7 @@ Ejecutar versión conda
 2. Instalar entorno del proyecto y activar:
 
    ```{bash}
-   conda create -f env.yml --name aviso
+   conda env create -f env.yml --name aviso
    conda activate aviso
    ```
 
